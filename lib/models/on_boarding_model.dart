@@ -22,7 +22,7 @@ List<OnBoardingModel> get pages => [
     title: 'Welcome to Boot AI',
     description:
         'Your intelligent assistant for learning, coding and creating.',
-    buttonText: 'Next',
+    buttonText: 'Get Started',
     highlightAI: true,
   ),
   OnBoardingModel(

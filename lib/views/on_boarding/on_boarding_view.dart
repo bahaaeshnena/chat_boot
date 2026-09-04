@@ -1,6 +1,7 @@
 import 'package:chat_boot/models/on_boarding_model.dart';
 import 'package:chat_boot/utils/theme/app_colors.dart';
 import 'package:chat_boot/utils/widgets/custom_elevated_button.dart';
+import 'package:chat_boot/views/chat/chat_view.dart';
 import 'package:chat_boot/views/on_boarding/widgets/dots_section.dart';
 import 'package:chat_boot/views/on_boarding/widgets/page_view_widget.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,10 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       );
       return;
     }
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => const ChatView()),
+    );
   }
 
   @override
