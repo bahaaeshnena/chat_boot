@@ -1,3 +1,4 @@
+import 'package:chat_boot/services/gemini_chat_service.dart';
 import 'package:chat_boot/utils/widgets/custom_container_icon_widget.dart';
 import 'package:chat_boot/utils/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,9 @@ class SectionSendMessage extends StatelessWidget {
             SizedBox(width: 10),
             CustomContainerIconWidget(
               icon: Icons.send,
+              onTap: () {
+                GeminiChatService.testGemini();
+              },
             ),
           ],
         ),
