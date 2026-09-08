@@ -4,7 +4,9 @@ import 'package:chat_boot/utils/widgets/custom_container_icon_widget.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key});
+  const CustomAppBar({super.key, this.onNewChat});
+
+  final VoidCallback? onNewChat;
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -15,11 +17,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       padding: const EdgeInsets.only(top: 40, left: 20, right: 20),
       child: Row(
         children: [
-          CircleAvatar(
+          const CircleAvatar(
             radius: 30,
-            backgroundImage: AssetImage(
-              Assets.assetsImagesChatBotAvatar,
-            ),
+            backgroundImage: AssetImage(Assets.assetsImagesChatBotAvatar),
           ),
           const SizedBox(width: 10),
           Text.rich(
@@ -32,20 +32,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               children: [
                 TextSpan(
                   text: ' AI',
-                  style: AppTextStyle.title.copyWith(
-                    fontSize: 24,
-                  ),
+                  style: AppTextStyle.title.copyWith(fontSize: 24),
                 ),
               ],
             ),
           ),
-          Spacer(),
-          CustomContainerIconWidget(icon: Icons.add),
+          const Spacer(),
+          CustomContainerIconWidget(icon: Icons.add, onTap: onNewChat),
           const SizedBox(width: 10),
-          Icon(
-            Icons.more_vert,
-            color: Colors.black,
-          ),
+          const Icon(Icons.more_vert, color: Colors.black),
         ],
       ),
     );
